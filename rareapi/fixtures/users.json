@@ -1,0 +1,32 @@
+[
+  {
+    "model": "rareapi.user",
+    "pk": 55,
+    "fields": {
+      "first_name": "bobby",
+      "last_name": "joe",
+      "bio": "something has gone awry...",
+      "profile_image_url": "https://i.imgur.com/L8GgaJC.png",
+      "email": "bobblyjolene@aol.com",
+      "created_on": "2027-11-24",
+      "active": true,
+      "is_staff": true,
+      "uid": "you_bumbling_buffoon"
+    }
+  },
+  {
+    "model": "rareapi.user",
+    "pk": 56,
+    "fields": {
+      "first_name": "HELP HELP HELP",
+      "last_name": "about a week ago",
+      "bio": "and what of us?",
+      "profile_image_url": "https://i.imgur.com/bLmTBtv.png",
+      "email": "numberalentendre@poopbutt.com",
+      "created_on": "1993-11-12",
+      "active": false,
+      "is_staff": true,
+      "uid": "HARK! THINE SOUL!"
+    }
+  }
+]
