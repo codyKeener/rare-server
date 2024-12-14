@@ -30,7 +30,7 @@
   "model": "rareapi.post",
   "pk": 3,
   "fields": {
-      "user": "3",
+      "user": "1",
       "category": "2",
       "title": "The Meaning of Life",
       "publication_date": "2024-12-13",

@@ -1,7 +1,7 @@
 [
   {
     "model": "rareapi.user",
-    "pk": 55,
+    "pk": 1,
     "fields": {
       "first_name": "bobby",
       "last_name": "joe",
@@ -16,7 +16,7 @@
   },
   {
     "model": "rareapi.user",
-    "pk": 56,
+    "pk": 2,
     "fields": {
       "first_name": "HELP HELP HELP",
       "last_name": "about a week ago",

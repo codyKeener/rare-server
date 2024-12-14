@@ -23,7 +23,9 @@ from rareapi.views import (
     TagView,
     PostTagView,
     check_user,
-    register_user
+    register_user,
+    CommentsView,
+    CategoryView,
 )
 
 
