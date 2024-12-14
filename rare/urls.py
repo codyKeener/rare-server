@@ -22,6 +22,8 @@ from rest_framework import routers
 from rareapi.views import (
     TagView,
     PostTagView,
+    CommentsView,
+    CategoryView,
     check_user,
     register_user
 )
