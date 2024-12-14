@@ -26,7 +26,8 @@ from rareapi.views import (
     register_user,
     CommentsView,
     CategoryView,
-    UserView
+    UserView,
+    PostView
 )
 
 
@@ -36,6 +37,7 @@ router.register(r'posttags', PostTagView, 'posttag')
 router.register(r'comments', CommentsView, 'comment')
 router.register(r'category', CategoryView, 'category')
 router.register(r'users', UserView, 'user')
+router.register(r'posts', PostView, 'post')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

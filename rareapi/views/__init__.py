@@ -7,3 +7,4 @@ from .auth import (
     register_user
 )
 from .user import UserView
+from .post import PostView
