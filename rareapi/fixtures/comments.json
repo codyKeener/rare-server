@@ -1,0 +1,42 @@
+[
+  {
+      "model": "rareapi.comments",
+      "pk": 1,
+      "fields": {
+          "author_id": 1,
+          "post_id": 1,
+          "content": "This is a fantastic post! Thanks for sharing.",
+          "created_on": "2024-12-10"
+      }
+  },
+  {
+      "model": "rareapi.comments",
+      "pk": 2,
+      "fields": {
+          "author_id": 2,
+          "post_id": 1,
+          "content": "I completely agree with your point of view.",
+          "created_on": "2024-12-11"
+      }
+  },
+  {
+      "model": "rareapi.comments",
+      "pk": 3,
+      "fields": {
+          "author_id": 1,
+          "post_id": 2,
+          "content": "Could you elaborate more on this topic?",
+          "created_on": "2024-12-12"
+      }
+  },
+  {
+      "model": "rareapi.comments",
+      "pk": 4,
+      "fields": {
+          "author_id": 3,
+          "post_id": 2,
+          "content": "Great insights, really appreciated this read!",
+          "created_on": "2024-12-13"
+      }
+  }
+]
