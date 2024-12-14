@@ -26,9 +26,12 @@ from rareapi.views import (
     register_user
 )
 
+
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'tags', TagView, 'tag')
 router.register(r'posttags', PostTagView, 'posttag')
+router.register(r'comments', CommentsView, 'comments')
+router.register(r'category', CategoryView, 'category')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
