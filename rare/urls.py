@@ -19,10 +19,12 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
 from rareapi.views import TagView, PostTagView
+from rareapi.views.category import CategoryView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'tags', TagView, 'tag')
 router.register(r'posttags', PostTagView, 'posttag')
+router.register(r'category', CategoryView, 'category')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
