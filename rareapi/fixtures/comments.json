@@ -33,7 +33,7 @@
       "model": "rareapi.comments",
       "pk": 4,
       "fields": {
-          "author_id": 3,
+          "author_id": 2,
           "post_id": 2,
           "content": "Great insights, really appreciated this read!",
           "created_on": "2024-12-13"
