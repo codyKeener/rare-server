@@ -1,8 +1,8 @@
 from django.db import models
 from .tag import Tag
-# from .post import Post
+from .post import Post
 
 class PostTag(models.Model):
   
-  # postid = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="tagposts")
-  tagid = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name="posttags")
+  post_id = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="tagposts")
+  tag_id = models.ForeignKey(Tag, on_delete=models.CASCADE, related_name="posttags")
