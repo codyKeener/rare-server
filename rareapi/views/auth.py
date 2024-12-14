@@ -30,13 +30,19 @@ def register_user(request):
     user = User.objects.create(
         profile_image_url=request.data['profileImageUrl'],
         bio=request.data['bio'],
-        uid=request.data['uid']
+        uid=request.data['uid'],
+        first_name=request.data['firstName'],
+        last_name=request.data['lastName'],
+        email=request.data['email']
     )
 
     data = {
         'id': user.id,
         'uid': user.uid,
-        'bio': user.bio
+        'bio': user.bio,
+        'firstName': user.first_name,
+        'lastName': user.last_name,
+        'profileImageUrl': user.profile_image_url
     }
 
     return Response(data)
