@@ -2,8 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from rareapi.models import Tag
-#, Post
+from rareapi.models import Tag, Post
 
 class TagView(ViewSet):
   
@@ -11,8 +10,8 @@ class TagView(ViewSet):
     # Handle GET requests for single tag
     try:
       tag = Tag.objects.get(pk=pk)
-      # posts = Post.objects.filter(tagposts__tag_id=tag)
-      # tag.posts=posts.all()
+      posts = Post.objects.filter(tagposts__tag_id=tag)
+      tag.posts=posts.all()
       serializer = SingleTagSerializer(tag)
       return Response(serializer.data)
     except Tag.DoesNotExist as ex:
@@ -56,17 +55,16 @@ class TagSerializer(serializers.ModelSerializer):
     fields = ('id', 'label')
     depth = 1
     
-# class PostSerializer(serializers.ModelSerializer):
-#   # JSON serializer for posts
-#   class Meta:
-#     model = Post
-#     fields = ('id', 'rare_user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content', 'approved')
+class PostSerializer(serializers.ModelSerializer):
+  # JSON serializer for posts
+  class Meta:
+    model = Post
+    fields = ('id', 'user', 'category', 'title', 'publication_date', 'image_url', 'content', 'approved')
     
 class SingleTagSerializer(serializers.ModelSerializer):
   #JSON serializer for a single tag
-  # posts = PostSerializer(read_only=True, many=True)
+  posts = PostSerializer(read_only=True, many=True)
   class Meta:
     model = Tag
-    fields = ('id', 'label')
-    #, 'posts'
+    fields = ('id', 'label', 'posts')
     depth = 1
