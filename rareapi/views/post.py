@@ -29,8 +29,8 @@ class PostView(ViewSet):
     """ Handle POST operations for Post instance"""
 
 
-    user = User.objects.get(pk=request.data["user_id"])
-    category = Category.objects.get(pk=request.data["category_id"])
+    user = User.objects.get(pk=request.data["user"])
+    category = Category.objects.get(pk=request.data["categoryid"])
     post = Post.objects.create(
       user=user,
       category=category,
@@ -47,9 +47,9 @@ class PostView(ViewSet):
     """Handle PUT requests for Posts"""
    
     post = Post.objects.get(pk=pk)
-    user = User.objects.get(pk=request.data["user_id"])
+    user = User.objects.get(pk=request.data["user"])
     post.user=user
-    category = Category.objects.get(pk=request.data["category_id"])
+    category = Category.objects.set(pk=request.data["categoryid"])
     post.category=category
     post.title=request.data["title"]
     post.publication_date=request.data["publication_date"]
@@ -70,4 +70,4 @@ class PostSerializer(serializers.ModelSerializer):
    """ JSON serializer for posts """
    class Meta:
       model = Post
-      fields = ('id', 'user', 'category', 'title', 'publication_date', 'image_url', 'content', 'approved')
+      fields = ('id', 'user', 'title', 'publication_date', 'image_url', 'content', 'approved')
