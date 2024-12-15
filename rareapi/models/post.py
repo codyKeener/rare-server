@@ -6,7 +6,7 @@ class Post(models.Model):
 
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False)
     title = models.CharField(max_length=80)
     publication_date = models.DateField()
     image_url = models.CharField(max_length=200)

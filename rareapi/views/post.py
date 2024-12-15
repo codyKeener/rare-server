@@ -29,8 +29,8 @@ class PostView(ViewSet):
     """ Handle POST operations for Post instance"""
 
 
-    user = User.objects.get(pk=request.data["user_id"])
-    category = Category.objects.get(pk=request.data["category_id"])
+    user = User.objects.get(pk=request.data["user"])
+    category = Category.objects.get(pk=request.data["category"])
     post = Post.objects.create(
       user=user,
       category=category,
