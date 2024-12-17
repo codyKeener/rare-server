@@ -24,7 +24,7 @@
       "pk": 3,
       "fields": {
           "author_id": 1,
-          "post_id": 2,
+          "post_id": 1,
           "content": "Could you elaborate more on this topic?",
           "created_on": "2024-12-12"
       }
@@ -34,7 +34,7 @@
       "pk": 4,
       "fields": {
           "author_id": 2,
-          "post_id": 2,
+          "post_id": 1,
           "content": "Great insights, really appreciated this read!",
           "created_on": "2024-12-13"
       }
