@@ -8,6 +8,7 @@ class UserView(ViewSet):
   
   def retrieve(self, request, pk):
     # Handle GET requests for single user
+    
     try:
       user = User.objects.get(pk=pk)
       serializer = UserSerializer(user)
@@ -17,8 +18,14 @@ class UserView(ViewSet):
     
   def list(self, request):
   # Handle GET requests to get all users
+    
     users = User.objects.all()
     
+    userId = request.query_params.get('uid', None)
+      
+    if userId is not None:
+      users = users.filter(uid=userId)
+      
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
   

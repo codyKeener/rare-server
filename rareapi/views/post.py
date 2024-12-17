@@ -4,9 +4,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rareapi.models import Post, User, Category
 
-
-
-
 class PostView(ViewSet):
  
   def retrieve(self, request, pk):
@@ -28,11 +25,10 @@ class PostView(ViewSet):
   def create(self, request):
     """ Handle POST operations for Post instance"""
 
-
-    user = User.objects.get(pk=request.data["user"])
+    userId = User.objects.get(uid=request.data["user"])
     category = Category.objects.get(pk=request.data["categoryid"])
     post = Post.objects.create(
-      user=user,
+      user=userId,
       category=category,
       title=request.data["title"],
       publication_date=request.data["publication_date"],
